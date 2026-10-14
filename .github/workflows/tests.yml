@@ -34,9 +34,12 @@ jobs:
       - name: Validate publishable package metadata
         run: |
           cargo metadata --locked --no-deps --format-version 1 | jq -e '
-            all(.packages[] | select(.name == "uzu-engine" or .name == "uzu-engine-macros");
+            [.packages[] | select(.name == "uzu-engine" or .name == "uzu-engine-macros")] as $packages |
+            ($packages | length == 2) and all($packages[];
               (.description | type == "string" and length > 0) and
-              (.keywords | length <= 5)
+              (.keywords | length <= 5) and
+              all(.dependencies[] | select(.kind != "dev" and .path != null);
+                .name == "uzu-engine-macros")
             )'
 
       - name: Dry run crates.io publishing

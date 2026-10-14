@@ -104,6 +104,6 @@ keisoku.workspace = true
 
 [target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
 tokio = { workspace = true, features = ["full"] }
-uzu = { path = "../legacy/uzu", default-features = false }
+uzu.workspace = true
 criterion = { workspace = true, default-features = true }
 proptest = { workspace = true, default-features = true }
