@@ -212,9 +212,6 @@ jobs:
       - name: "Release: Build artifacts"
         run: cargo tools release "${VERSION}" "$UZU_RELEASE_PATH"
 
-      - name: "Release: Dry run crates.io publishing"
-        run: cargo publish -p uzu-engine-macros -p uzu-engine --locked --dry-run --allow-dirty
-
       - name: "Binaries: Codesign"
         shell: bash
         run: |
@@ -313,13 +310,6 @@ jobs:
             git commit -m "Release ${VERSION}"
           fi
           git tag "${VERSION}"
-
-      - name: "Publish Rust: crates.io"
-        env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-        run: |
-          : "${CARGO_REGISTRY_TOKEN:?CARGO_REGISTRY_TOKEN secret is required}"
-          cargo publish -p uzu-engine-macros -p uzu-engine --locked
 
       # ---------------------------------------------------------------
       # Publish Platform
