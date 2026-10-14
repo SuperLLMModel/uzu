@@ -20,6 +20,29 @@ defaults:
     shell: bash
 
 jobs:
+  crates:
+    name: crates.io dry run
+    runs-on: macos-26
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+        with:
+          metal: true
+
+      - name: Validate publishable package metadata
+        run: |
+          cargo metadata --locked --no-deps --format-version 1 | jq -e '
+            all(.packages[] | select(.publish != []);
+              (.name == "uzu" or (.name | startswith("uzu-"))) and
+              (.description | type == "string" and length > 0) and
+              (.keywords | length <= 5)
+            )'
+
+      - name: Dry run crates.io publishing
+        run: cargo publish --workspace --locked --dry-run
+
   linters:
     name: linters
     runs-on: prefect-github-actions
@@ -262,11 +285,12 @@ jobs:
   completed:
     name: completed
     runs-on: ubuntu-latest
-    needs: [linters, tests, validate-bindings, linters-mirai-gui, tests-mirai-gui, build-mirai-gui]
+    needs: [crates, linters, tests, validate-bindings, linters-mirai-gui, tests-mirai-gui, build-mirai-gui]
     if: ${{ always() }}
 
     steps:
       - run: |
+          [ "${{ needs.crates.result }}" = success ]
           [ "${{ needs.linters.result }}" = success ]
           [ "${{ needs.tests.result }}" = success ]
           [ "${{ needs.validate-bindings.result }}" = success ]
