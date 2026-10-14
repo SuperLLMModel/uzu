@@ -1,5 +1,6 @@
 [package]
-name = "hanashi"
+name = "uzu-hanashi"
+description = "Chat formatting and tokenization for uzu"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -7,6 +8,9 @@ authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license.workspace = true
+
+[lib]
+name = "hanashi"
 
 [dependencies]
 shoji.workspace = true

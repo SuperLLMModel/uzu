@@ -1,5 +1,6 @@
 [package]
-name = "backend-remote"
+name = "uzu-backend-remote"
+description = "Remote inference backend for uzu"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -7,6 +8,9 @@ authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license.workspace = true
+
+[lib]
+name = "backend_remote"
 
 [dependencies]
 shoji.workspace = true

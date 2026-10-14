@@ -39,28 +39,26 @@ keywords = [
     "metal",
     "high-performance",
     "inference",
-    "llm",
-    "tts",
 ]
 
 [workspace.dependencies]
-bindings-types = { path = "crates/legacy/bindings-types", default-features = false }
-bindings = { path = "crates/legacy/bindings", default-features = false }
-shoji = { path = "crates/legacy/shoji", default-features = false }
-uzu-engine = { path = "crates/uzu-engine", default-features = false }
-uzu-engine-macros = { path = "crates/uzu-engine-macros" }
-backend-remote = { path = "crates/legacy/backend-remote", default-features = false }
-json-transform = { path = "crates/legacy/json-transform", default-features = false }
-token-stream-parser = { path = "crates/legacy/token-stream-parser", default-features = false }
-hanashi = { path = "crates/legacy/hanashi", default-features = false }
-nagare = { path = "crates/legacy/nagare", default-features = false }
-nagare-macros = { path = "crates/legacy/nagare-macros" }
-download-manager = { path = "crates/legacy/download-manager", default-features = false }
-mock-registry = { path = "crates/legacy/mock-registry", default-features = false }
-keisoku = { path = "crates/legacy/keisoku", default-features = false }
-kanka = { path = "crates/legacy/kanka", default-features = false }
-kiban = { path = "crates/legacy/kiban", default-features = false }
-uzu = { path = "crates/legacy/uzu", default-features = false }
+bindings-types = { package = "uzu-bindings-types", version = "0.6.7", path = "crates/legacy/bindings-types", default-features = false }
+bindings = { package = "uzu-bindings", version = "0.6.7", path = "crates/legacy/bindings", default-features = false }
+shoji = { package = "uzu-shoji", version = "0.6.7", path = "crates/legacy/shoji", default-features = false }
+uzu-engine = { version = "0.6.7", path = "crates/uzu-engine", default-features = false }
+uzu-engine-macros = { version = "0.6.7", path = "crates/uzu-engine-macros" }
+backend-remote = { package = "uzu-backend-remote", version = "0.6.7", path = "crates/legacy/backend-remote", default-features = false }
+json-transform = { package = "uzu-json-transform", version = "0.6.7", path = "crates/legacy/json-transform", default-features = false }
+token-stream-parser = { package = "uzu-token-stream-parser", version = "0.6.7", path = "crates/legacy/token-stream-parser", default-features = false }
+hanashi = { package = "uzu-hanashi", version = "0.6.7", path = "crates/legacy/hanashi", default-features = false }
+nagare = { package = "uzu-nagare", version = "0.6.7", path = "crates/legacy/nagare", default-features = false }
+nagare-macros = { package = "uzu-nagare-macros", version = "0.6.7", path = "crates/legacy/nagare-macros" }
+download-manager = { package = "uzu-download-manager", version = "0.6.7", path = "crates/legacy/download-manager", default-features = false }
+mock-registry = { package = "uzu-mock-registry", path = "crates/legacy/mock-registry", default-features = false }
+keisoku = { package = "uzu-keisoku", version = "0.6.7", path = "crates/legacy/keisoku", default-features = false }
+kanka = { package = "uzu-kanka", version = "0.6.7", path = "crates/legacy/kanka", default-features = false }
+kiban = { package = "uzu-kiban", version = "0.6.7", path = "crates/legacy/kiban", default-features = false }
+uzu = { version = "0.6.7", path = "crates/legacy/uzu", default-features = false }
 xgrammar = { package = "xgrammar-rs", version = "0.2.8", features = ["tokenizers"] }
 half = { version = "2.7", features = ["bytemuck", "num-traits"] }
 ndarray = "0.17"

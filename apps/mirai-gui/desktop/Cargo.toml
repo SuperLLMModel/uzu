@@ -26,7 +26,7 @@ chrono = { version = "0.4", default-features = false, features = ["clock"] }
 uuid = { version = "1", features = ["v4"] }
 
 uzu = { path = "../../../crates/legacy/uzu", default-features = false, features = ["backend-metal"] }
-hanashi = { path = "../../../crates/legacy/hanashi", default-features = false }
+hanashi = { package = "uzu-hanashi", path = "../../../crates/legacy/hanashi", default-features = false }
 
 [profile.dev.build-override]
 opt-level = 2

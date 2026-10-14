@@ -1,5 +1,7 @@
 [package]
-name = "cli"
+name = "uzu-cli"
+publish = false
+description = "Command-line interface for uzu"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true

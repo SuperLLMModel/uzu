@@ -1,5 +1,6 @@
 [package]
-name = "json-transform"
+name = "uzu-json-transform"
+description = "JSON transformations for uzu model templates"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -7,6 +8,9 @@ authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license.workspace = true
+
+[lib]
+name = "json_transform"
 
 [dependencies]
 serde.workspace = true

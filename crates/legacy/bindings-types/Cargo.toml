@@ -1,5 +1,6 @@
 [package]
-name = "bindings-types"
+name = "uzu-bindings-types"
+description = "Shared data types for uzu language bindings"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -9,6 +10,7 @@ repository.workspace = true
 license.workspace = true
 
 [lib]
+name = "bindings_types"
 crate-type = ["lib", "cdylib", "staticlib"]
 
 [features]

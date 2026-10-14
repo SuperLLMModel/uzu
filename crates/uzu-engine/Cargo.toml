@@ -1,5 +1,6 @@
 [package]
 name = "uzu-engine"
+description = "Inference engine for uzu AI models"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -104,6 +105,6 @@ keisoku.workspace = true
 
 [target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
 tokio = { workspace = true, features = ["full"] }
-uzu.workspace = true
+uzu = { path = "../legacy/uzu", default-features = false }
 criterion = { workspace = true, default-features = true }
 proptest = { workspace = true, default-features = true }

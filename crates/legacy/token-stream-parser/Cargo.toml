@@ -1,5 +1,6 @@
 [package]
-name = "token-stream-parser"
+name = "uzu-token-stream-parser"
+description = "Streaming token parser for uzu model outputs"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -7,6 +8,9 @@ authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license.workspace = true
+
+[lib]
+name = "token_stream_parser"
 
 [dependencies]
 json-transform.workspace = true
