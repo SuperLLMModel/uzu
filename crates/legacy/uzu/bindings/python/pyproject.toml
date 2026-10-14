@@ -15,8 +15,6 @@ keywords = [
     "metal",
     "high-performance",
     "inference",
-    "llm",
-    "tts",
 ]
 classifiers = [
     "Programming Language :: Rust",
