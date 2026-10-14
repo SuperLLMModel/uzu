@@ -34,14 +34,13 @@ jobs:
       - name: Validate publishable package metadata
         run: |
           cargo metadata --locked --no-deps --format-version 1 | jq -e '
-            all(.packages[] | select(.publish != []);
-              (.name == "uzu" or (.name | startswith("uzu-"))) and
+            all(.packages[] | select(.name == "uzu-engine" or .name == "uzu-engine-macros");
               (.description | type == "string" and length > 0) and
               (.keywords | length <= 5)
             )'
 
       - name: Dry run crates.io publishing
-        run: cargo publish --workspace --locked --dry-run
+        run: cargo publish -p uzu-engine-macros -p uzu-engine --locked --dry-run
 
   linters:
     name: linters
@@ -96,7 +95,7 @@ jobs:
             tests: true
             benches: true
           - host: 'linux'
-            crates: ['uzu-cli']
+            crates: ['cli']
           - host: 'linux'
             target: 'wasm32-wasip1-threads'
             nightly: true
@@ -104,7 +103,7 @@ jobs:
             tests: 'kernels'
           - host: 'linux'
             target: 'wasm32-unknown-unknown'
-            crates: ['uzu-kiban']
+            crates: ['kiban']
 
     env:
       CARGO_ENCODED_RUSTFLAGS: "-Dwarnings"

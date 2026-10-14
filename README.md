@@ -1460,7 +1460,7 @@ uv run lalamo convert meta-llama/Llama-3.2-1B-Instruct
 You can run `uzu` in CLI mode:
 
 ```bash
-cargo run --release -p uzu-cli
+cargo run --release -p cli
 ```
 
 This launches an interactive app where you can browse, download, and interact with models.
@@ -1468,7 +1468,7 @@ This launches an interactive app where you can browse, download, and interact wi
 You can also preselect a model with `--model`, passing its identifier or repository id:
 
 ```bash
-cargo run --release -p uzu-cli -- --model trymirai/Qwen3.5-4B-M
+cargo run --release -p cli -- --model trymirai/Qwen3.5-4B-M
 ```
 
 If the model is not downloaded yet, the CLI starts downloading it automatically.
@@ -1478,7 +1478,7 @@ If the model is not downloaded yet, the CLI starts downloading it automatically.
 To run benchmarks, pass a downloaded model path, a benchmark task file, and an output path:
 
 ```bash
-cargo run --release -p uzu-cli -- bench {MODEL_PATH} {TASK_PATH} {OUTPUT_PATH}
+cargo run --release -p cli -- bench {MODEL_PATH} {TASK_PATH} {OUTPUT_PATH}
 ```
 
 ## Server
@@ -1486,13 +1486,13 @@ cargo run --release -p uzu-cli -- bench {MODEL_PATH} {TASK_PATH} {OUTPUT_PATH}
 You can also run `uzu` as an OpenAI-compatible HTTP server:
 
 ```bash
-cargo run --release -p uzu-cli -- server --model trymirai/Qwen3.5-4B-M
+cargo run --release -p cli -- server --model trymirai/Qwen3.5-4B-M
 ```
 
 The model is loaded on startup (and downloaded first if needed). By default the server listens on `127.0.0.1:8000`; override the address with `--host` and `--port`:
 
 ```bash
-cargo run --release -p uzu-cli -- server --model trymirai/Qwen3.5-4B-M --host 0.0.0.0 --port 8080
+cargo run --release -p cli -- server --model trymirai/Qwen3.5-4B-M --host 0.0.0.0 --port 8080
 ```
 
 It exposes the following endpoints, available both at the root and under `/v1`:

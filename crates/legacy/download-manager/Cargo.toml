@@ -1,6 +1,5 @@
 [package]
-name = "uzu-download-manager"
-description = "Model downloads and storage for uzu"
+name = "download-manager"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -10,7 +9,6 @@ repository.workspace = true
 license.workspace = true
 
 [lib]
-name = "download_manager"
 crate-type = ["lib", "cdylib", "staticlib"]
 
 [features]

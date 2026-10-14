@@ -1,6 +1,5 @@
 [package]
-name = "uzu-nagare-macros"
-description = "Procedural macros for uzu tool calling"
+name = "nagare-macros"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -10,7 +9,6 @@ repository.workspace = true
 license.workspace = true
 
 [lib]
-name = "nagare_macros"
 proc-macro = true
 
 [dependencies]

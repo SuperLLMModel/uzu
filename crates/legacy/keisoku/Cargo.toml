@@ -1,5 +1,5 @@
 [package]
-name = "uzu-keisoku"
+name = "keisoku"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true

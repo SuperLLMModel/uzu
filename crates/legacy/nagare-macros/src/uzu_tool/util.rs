@@ -53,7 +53,7 @@ pub fn doc_string(attrs: &[Attribute]) -> String {
 }
 
 pub fn nagare_path() -> syn::Result<TokenStream2> {
-    match crate_name("uzu-nagare") {
+    match crate_name("nagare") {
         Ok(FoundCrate::Itself) => Ok(quote!(crate)),
         Ok(FoundCrate::Name(name)) => {
             let ident = format_ident!("{name}");
@@ -68,8 +68,8 @@ pub fn nagare_path() -> syn::Result<TokenStream2> {
             Err(uzu_error) => Err(Error::new(
                 Span::call_site(),
                 format!(
-                    "either `uzu-nagare` or `uzu` must be a direct dependency to use the tool macros: \
-                     failed to find `uzu-nagare` ({nagare_error}); failed to find `uzu` ({uzu_error})"
+                    "either `nagare` or `uzu` must be a direct dependency to use the tool macros: \
+                     failed to find `nagare` ({nagare_error}); failed to find `uzu` ({uzu_error})"
                 ),
             )),
         },

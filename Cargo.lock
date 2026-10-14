@@ -448,6 +448,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "backend-remote"
+version = "0.6.7"
+dependencies = [
+ "async-openai",
+ "futures",
+ "indexmap 2.14.0",
+ "reqwest 0.13.4",
+ "serde",
+ "serde_json",
+ "shoji",
+ "thiserror 2.0.18",
+ "tokio-util",
+]
+
+[[package]]
 name = "backoff"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -493,6 +508,35 @@ name = "binascii"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "383d29d513d8764dcdc42ea295d979eb99c3c9f00607b3692cf68a431f7dca72"
+
+[[package]]
+name = "bindings"
+version = "0.6.7"
+dependencies = [
+ "heck",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.118",
+]
+
+[[package]]
+name = "bindings-types"
+version = "0.6.7"
+dependencies = [
+ "inventory",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "pyo3",
+ "pyo3-async-runtimes",
+ "pyo3-build-config",
+ "pyo3-stub-gen",
+ "serde-wasm-bindgen",
+ "tsify",
+ "uniffi",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+]
 
 [[package]]
 name = "bit-set"
@@ -872,6 +916,66 @@ name = "clap_lex"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c8d4a3bb8b1e0c1050499d1815f5ab16d04f0959b233085fb31653fbfc9d98f9"
+
+[[package]]
+name = "cli"
+version = "0.6.7"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "clap",
+ "comfy-table",
+ "confy",
+ "crossterm",
+ "dirs",
+ "dotenvy",
+ "futures-util",
+ "hanashi",
+ "indexmap 2.14.0",
+ "indicatif",
+ "indoc",
+ "iocraft",
+ "jsonschema",
+ "nagare",
+ "ratatui",
+ "rocket",
+ "serde",
+ "serde_json",
+ "shoji",
+ "sysinfo",
+ "thiserror 2.0.18",
+ "tokio",
+ "tokio-stream",
+ "toml 1.1.2+spec-1.1.0",
+ "tracing",
+ "tracing-subscriber",
+ "unicode-segmentation",
+ "unicode-width 0.2.2",
+ "uuid",
+ "uzu",
+ "uzu-engine",
+]
+
+[[package]]
+name = "cli-tools"
+version = "0.6.7"
+dependencies = [
+ "anyhow",
+ "clap",
+ "colored",
+ "heck",
+ "ignore",
+ "indexmap 2.14.0",
+ "itertools 0.14.0",
+ "minijinja",
+ "regex",
+ "serde",
+ "serde_json",
+ "syn 2.0.118",
+ "toml 1.1.2+spec-1.1.0",
+ "toml_edit 0.25.12+spec-1.1.0",
+ "walkdir",
+]
 
 [[package]]
 name = "cmake"
@@ -1582,6 +1686,46 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1aaf95b3e5c8f23aa320147307562d361db0ae0d51242340f558153b4eb2439b"
 
 [[package]]
+name = "download-manager"
+version = "0.6.7"
+dependencies = [
+ "async-trait",
+ "bindings",
+ "bindings-types",
+ "block2",
+ "bon",
+ "futures-util",
+ "inventory",
+ "kiban",
+ "mock-registry",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "objc2",
+ "objc2-foundation",
+ "pyo3",
+ "pyo3-async-runtimes",
+ "pyo3-build-config",
+ "pyo3-stub-gen",
+ "reqwest 0.13.4",
+ "rstest",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "tempfile",
+ "thiserror 2.0.18",
+ "tokio",
+ "tokio-stream",
+ "tracing",
+ "tsify",
+ "uniffi",
+ "uuid",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "wiremock",
+]
+
+[[package]]
 name = "dunce"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2200,6 +2344,25 @@ dependencies = [
  "crunchy",
  "num-traits",
  "zerocopy",
+]
+
+[[package]]
+name = "hanashi"
+version = "0.6.7"
+dependencies = [
+ "indexmap 2.14.0",
+ "libc",
+ "minijinja",
+ "minijinja-contrib",
+ "openai-harmony",
+ "regex",
+ "serde",
+ "serde_json",
+ "shoji",
+ "thiserror 2.0.18",
+ "token-stream-parser",
+ "tokenizers",
+ "tracing",
 ]
 
 [[package]]
@@ -2900,6 +3063,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "json-transform"
+version = "0.6.7"
+dependencies = [
+ "fancy-regex 0.17.0",
+ "indexmap 2.14.0",
+ "llm_json",
+ "regex",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+ "tracing",
+ "tracing-subscriber",
+ "tracing-tree",
+]
+
+[[package]]
 name = "jsonschema"
 version = "0.46.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2938,6 +3117,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "kanka"
+version = "0.6.7"
+dependencies = [
+ "libc",
+ "obfstr",
+ "objc2-core-foundation",
+]
+
+[[package]]
 name = "kasuari"
 version = "0.4.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2949,12 +3137,41 @@ dependencies = [
 ]
 
 [[package]]
+name = "keisoku"
+version = "0.6.7"
+dependencies = [
+ "bitflags 2.13.0",
+ "kanka",
+ "libc",
+ "obfstr",
+ "objc2-core-foundation",
+ "objc2-io-kit",
+ "serde",
+ "serde_json",
+ "sysinfo",
+ "thiserror 2.0.18",
+]
+
+[[package]]
 name = "keyring-core"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fb1e621458ca9c51aa110bd0339d4751a056b9576bf1253aee1aa560dda0fc9d"
 dependencies = [
  "log",
+]
+
+[[package]]
+name = "kiban"
+version = "0.6.7"
+dependencies = [
+ "async-trait",
+ "futures-util",
+ "tokio",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+ "web-time",
 ]
 
 [[package]]
@@ -3330,6 +3547,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "mock-registry"
+version = "0.6.7"
+dependencies = [
+ "base64 0.22.1",
+ "bitflags 2.13.0",
+ "bytesize",
+ "crc32c",
+ "http 1.4.2",
+ "httparse",
+ "serde_json",
+ "shoji",
+ "stream_throttle",
+ "thiserror 2.0.18",
+ "tokio",
+ "tracing",
+ "wiremock",
+]
+
+[[package]]
 name = "monostate"
 version = "0.1.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3393,6 +3629,55 @@ dependencies = [
  "tokio",
  "tokio-util",
  "version_check",
+]
+
+[[package]]
+name = "nagare"
+version = "0.6.7"
+dependencies = [
+ "async-trait",
+ "bindings",
+ "bindings-types",
+ "bon",
+ "futures",
+ "hanashi",
+ "indexmap 2.14.0",
+ "inventory",
+ "keisoku",
+ "nagare-macros",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "pyo3",
+ "pyo3-async-runtimes",
+ "pyo3-build-config",
+ "pyo3-stub-gen",
+ "reqwest 0.13.4",
+ "schemars 1.2.1",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "shoji",
+ "thiserror 2.0.18",
+ "tokenizers",
+ "tokio",
+ "tokio-util",
+ "tracing",
+ "tsify",
+ "uniffi",
+ "uuid",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+]
+
+[[package]]
+name = "nagare-macros"
+version = "0.6.7"
+dependencies = [
+ "proc-macro-crate",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.118",
 ]
 
 [[package]]
@@ -5729,6 +6014,35 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
 
 [[package]]
+name = "shoji"
+version = "0.6.7"
+dependencies = [
+ "bindings",
+ "bindings-types",
+ "futures",
+ "hound",
+ "indexmap 2.14.0",
+ "inventory",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "pyo3",
+ "pyo3-async-runtimes",
+ "pyo3-build-config",
+ "pyo3-stub-gen",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "thiserror 2.0.18",
+ "tokenizers",
+ "tokio-util",
+ "tsify",
+ "uniffi",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+]
+
+[[package]]
 name = "signal-hook"
 version = "0.3.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6376,6 +6690,21 @@ name = "tinyvec_macros"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
+
+[[package]]
+name = "token-stream-parser"
+version = "0.6.7"
+dependencies = [
+ "indexmap 2.14.0",
+ "json-transform",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+ "tokenizers",
+ "tracing",
+ "tracing-subscriber",
+ "tracing-tree",
+]
 
 [[package]]
 name = "tokenizers"
@@ -7120,18 +7449,26 @@ dependencies = [
  "anyhow",
  "apple-native-keyring-store",
  "async-openai",
+ "backend-remote",
+ "bindings",
+ "bindings-types",
  "bon",
  "chrono",
  "confy",
  "dirs",
  "dotenvy",
+ "download-manager",
  "fancy-regex 0.17.0",
  "futures",
  "futures-util",
+ "hanashi",
  "indexmap 2.14.0",
  "indicatif",
  "inventory",
  "keyring-core",
+ "kiban",
+ "mock-registry",
+ "nagare",
  "napi",
  "napi-build",
  "napi-derive",
@@ -7150,6 +7487,7 @@ dependencies = [
  "serde",
  "serde-wasm-bindgen",
  "serde_json",
+ "shoji",
  "sysinfo",
  "tempfile",
  "test-tag",
@@ -7164,160 +7502,7 @@ dependencies = [
  "tsify",
  "uniffi",
  "uuid",
- "uzu-backend-remote",
- "uzu-bindings",
- "uzu-bindings-types",
- "uzu-download-manager",
  "uzu-engine",
- "uzu-hanashi",
- "uzu-kiban",
- "uzu-mock-registry",
- "uzu-nagare",
- "uzu-shoji",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "wiremock",
-]
-
-[[package]]
-name = "uzu-backend-remote"
-version = "0.6.7"
-dependencies = [
- "async-openai",
- "futures",
- "indexmap 2.14.0",
- "reqwest 0.13.4",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "tokio-util",
- "uzu-shoji",
-]
-
-[[package]]
-name = "uzu-bindings"
-version = "0.6.7"
-dependencies = [
- "heck",
- "proc-macro2",
- "quote",
- "syn 2.0.118",
-]
-
-[[package]]
-name = "uzu-bindings-types"
-version = "0.6.7"
-dependencies = [
- "inventory",
- "napi",
- "napi-build",
- "napi-derive",
- "pyo3",
- "pyo3-async-runtimes",
- "pyo3-build-config",
- "pyo3-stub-gen",
- "serde-wasm-bindgen",
- "tsify",
- "uniffi",
- "wasm-bindgen",
- "wasm-bindgen-futures",
-]
-
-[[package]]
-name = "uzu-cli"
-version = "0.6.7"
-dependencies = [
- "anyhow",
- "chrono",
- "clap",
- "comfy-table",
- "confy",
- "crossterm",
- "dirs",
- "dotenvy",
- "futures-util",
- "indexmap 2.14.0",
- "indicatif",
- "indoc",
- "iocraft",
- "jsonschema",
- "ratatui",
- "rocket",
- "serde",
- "serde_json",
- "sysinfo",
- "thiserror 2.0.18",
- "tokio",
- "tokio-stream",
- "toml 1.1.2+spec-1.1.0",
- "tracing",
- "tracing-subscriber",
- "unicode-segmentation",
- "unicode-width 0.2.2",
- "uuid",
- "uzu",
- "uzu-engine",
- "uzu-hanashi",
- "uzu-nagare",
- "uzu-shoji",
-]
-
-[[package]]
-name = "uzu-cli-tools"
-version = "0.6.7"
-dependencies = [
- "anyhow",
- "clap",
- "colored",
- "heck",
- "ignore",
- "indexmap 2.14.0",
- "itertools 0.14.0",
- "minijinja",
- "regex",
- "serde",
- "serde_json",
- "syn 2.0.118",
- "toml 1.1.2+spec-1.1.0",
- "toml_edit 0.25.12+spec-1.1.0",
- "walkdir",
-]
-
-[[package]]
-name = "uzu-download-manager"
-version = "0.6.7"
-dependencies = [
- "async-trait",
- "block2",
- "bon",
- "futures-util",
- "inventory",
- "napi",
- "napi-build",
- "napi-derive",
- "objc2",
- "objc2-foundation",
- "pyo3",
- "pyo3-async-runtimes",
- "pyo3-build-config",
- "pyo3-stub-gen",
- "reqwest 0.13.4",
- "rstest",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "tempfile",
- "thiserror 2.0.18",
- "tokio",
- "tokio-stream",
- "tracing",
- "tsify",
- "uniffi",
- "uuid",
- "uzu-bindings",
- "uzu-bindings-types",
- "uzu-kiban",
- "uzu-mock-registry",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "wiremock",
@@ -7338,6 +7523,7 @@ dependencies = [
  "half",
  "is_close",
  "itertools 0.14.0",
+ "keisoku",
  "libm",
  "libtest-mimic",
  "monostate",
@@ -7369,8 +7555,6 @@ dependencies = [
  "tokio",
  "uzu",
  "uzu-engine-macros",
- "uzu-keisoku",
- "uzu-shoji",
  "walkdir",
  "xgrammar-rs",
  "xxhash-rust",
@@ -7382,191 +7566,6 @@ version = "0.6.7"
 dependencies = [
  "quote",
  "syn 2.0.118",
-]
-
-[[package]]
-name = "uzu-hanashi"
-version = "0.6.7"
-dependencies = [
- "indexmap 2.14.0",
- "libc",
- "minijinja",
- "minijinja-contrib",
- "openai-harmony",
- "regex",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "tokenizers",
- "tracing",
- "uzu-shoji",
- "uzu-token-stream-parser",
-]
-
-[[package]]
-name = "uzu-json-transform"
-version = "0.6.7"
-dependencies = [
- "fancy-regex 0.17.0",
- "indexmap 2.14.0",
- "llm_json",
- "regex",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "tracing",
- "tracing-subscriber",
- "tracing-tree",
-]
-
-[[package]]
-name = "uzu-kanka"
-version = "0.6.7"
-dependencies = [
- "libc",
- "obfstr",
- "objc2-core-foundation",
-]
-
-[[package]]
-name = "uzu-keisoku"
-version = "0.6.7"
-dependencies = [
- "bitflags 2.13.0",
- "libc",
- "obfstr",
- "objc2-core-foundation",
- "objc2-io-kit",
- "serde",
- "serde_json",
- "sysinfo",
- "thiserror 2.0.18",
- "uzu-kanka",
-]
-
-[[package]]
-name = "uzu-kiban"
-version = "0.6.7"
-dependencies = [
- "async-trait",
- "futures-util",
- "tokio",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
- "web-time",
-]
-
-[[package]]
-name = "uzu-mock-registry"
-version = "0.6.7"
-dependencies = [
- "base64 0.22.1",
- "bitflags 2.13.0",
- "bytesize",
- "crc32c",
- "http 1.4.2",
- "httparse",
- "serde_json",
- "stream_throttle",
- "thiserror 2.0.18",
- "tokio",
- "tracing",
- "uzu-shoji",
- "wiremock",
-]
-
-[[package]]
-name = "uzu-nagare"
-version = "0.6.7"
-dependencies = [
- "async-trait",
- "bon",
- "futures",
- "indexmap 2.14.0",
- "inventory",
- "napi",
- "napi-build",
- "napi-derive",
- "pyo3",
- "pyo3-async-runtimes",
- "pyo3-build-config",
- "pyo3-stub-gen",
- "reqwest 0.13.4",
- "schemars 1.2.1",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "thiserror 2.0.18",
- "tokenizers",
- "tokio",
- "tokio-util",
- "tracing",
- "tsify",
- "uniffi",
- "uuid",
- "uzu-bindings",
- "uzu-bindings-types",
- "uzu-hanashi",
- "uzu-keisoku",
- "uzu-nagare-macros",
- "uzu-shoji",
- "wasm-bindgen",
- "wasm-bindgen-futures",
-]
-
-[[package]]
-name = "uzu-nagare-macros"
-version = "0.6.7"
-dependencies = [
- "proc-macro-crate",
- "proc-macro2",
- "quote",
- "syn 2.0.118",
-]
-
-[[package]]
-name = "uzu-shoji"
-version = "0.6.7"
-dependencies = [
- "futures",
- "hound",
- "indexmap 2.14.0",
- "inventory",
- "napi",
- "napi-build",
- "napi-derive",
- "pyo3",
- "pyo3-async-runtimes",
- "pyo3-build-config",
- "pyo3-stub-gen",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "thiserror 2.0.18",
- "tokenizers",
- "tokio-util",
- "tsify",
- "uniffi",
- "uzu-bindings",
- "uzu-bindings-types",
- "wasm-bindgen",
- "wasm-bindgen-futures",
-]
-
-[[package]]
-name = "uzu-token-stream-parser"
-version = "0.6.7"
-dependencies = [
- "indexmap 2.14.0",
- "serde",
- "serde_json",
- "thiserror 2.0.18",
- "tokenizers",
- "tracing",
- "tracing-subscriber",
- "tracing-tree",
- "uzu-json-transform",
 ]
 
 [[package]]

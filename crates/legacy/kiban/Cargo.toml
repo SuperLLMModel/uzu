@@ -1,5 +1,5 @@
 [package]
-name = "uzu-kiban"
+name = "kiban"
 description = "Cross-platform OS primitives"
 edition.workspace = true
 rust-version.workspace = true
@@ -8,9 +8,6 @@ authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license.workspace = true
-
-[lib]
-name = "kiban"
 
 [dependencies]
 async-trait.workspace = true

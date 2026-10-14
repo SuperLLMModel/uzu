@@ -213,7 +213,7 @@ jobs:
         run: cargo tools release "${VERSION}" "$UZU_RELEASE_PATH"
 
       - name: "Release: Dry run crates.io publishing"
-        run: cargo publish --workspace --locked --dry-run --allow-dirty
+        run: cargo publish -p uzu-engine-macros -p uzu-engine --locked --dry-run --allow-dirty
 
       - name: "Binaries: Codesign"
         shell: bash
@@ -319,7 +319,7 @@ jobs:
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
         run: |
           : "${CARGO_REGISTRY_TOKEN:?CARGO_REGISTRY_TOKEN secret is required}"
-          cargo publish --workspace --locked
+          cargo publish -p uzu-engine-macros -p uzu-engine --locked
 
       # ---------------------------------------------------------------
       # Publish Platform

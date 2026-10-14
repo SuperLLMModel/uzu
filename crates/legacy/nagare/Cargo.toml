@@ -1,6 +1,5 @@
 [package]
-name = "uzu-nagare"
-description = "Inference sessions and tool calling for uzu"
+name = "nagare"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -10,7 +9,6 @@ repository.workspace = true
 license.workspace = true
 
 [lib]
-name = "nagare"
 crate-type = ["lib", "cdylib", "staticlib"]
 
 [features]

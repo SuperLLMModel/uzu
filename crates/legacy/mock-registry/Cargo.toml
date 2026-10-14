@@ -1,7 +1,5 @@
 [package]
-name = "uzu-mock-registry"
-publish = false
-description = "Test registry fixtures for uzu"
+name = "mock-registry"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -9,9 +7,6 @@ authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license.workspace = true
-
-[lib]
-name = "mock_registry"
 
 [dependencies]
 base64.workspace = true

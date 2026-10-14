@@ -1,6 +1,5 @@
 [package]
-name = "uzu-bindings"
-description = "Procedural macros for uzu language bindings"
+name = "bindings"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -10,7 +9,6 @@ repository.workspace = true
 license.workspace = true
 
 [lib]
-name = "bindings"
 proc-macro = true
 
 [dependencies]

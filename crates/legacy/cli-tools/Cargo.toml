@@ -1,7 +1,5 @@
 [package]
-name = "uzu-cli-tools"
-publish = false
-description = "Development and release tools for uzu"
+name = "cli-tools"
 edition.workspace = true
 rust-version.workspace = true
 version.workspace = true
@@ -9,9 +7,6 @@ authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 license.workspace = true
-
-[lib]
-name = "cli_tools"
 
 [[bin]]
 name = "cli-tools"
